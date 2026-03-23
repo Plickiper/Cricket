@@ -53,6 +53,7 @@ graph TD
 * **Java 17 & Spring Boot 2.7:** Core backend framework for building RESTful web services.
 * **Spring Data JPA & Hibernate:** For ORM and seamless database interactions.
 * **MySQL 8.0:** Relational database for persistent storage of ticket records.
+* **Postman**: Used for endpoint testing, debugging, and request validation.
 
 **Frontend:**
 * **JavaFX 17 & FXML:** Native desktop UI framework and markup language.
