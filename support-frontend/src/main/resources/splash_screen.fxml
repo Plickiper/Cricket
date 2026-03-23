@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.TextAlignment?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.pecenio.frontend.controller.SplashScreenController"
+      alignment="CENTER" spacing="40"
+      prefHeight="500.0" prefWidth="700.0"
+      style="-fx-background-color: white; -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+    
+    <padding>
+        <Insets top="60" right="60" bottom="60" left="60"/>
+    </padding>
+
+    <!-- Logo/Icon Placeholder -->
+    <VBox alignment="CENTER" spacing="10">
+        <Label text="🎫"
+               style="-fx-font-size: 80px; -fx-text-fill: #2c3e50;"/>
+    </VBox>
+
+    <!-- Title Section -->
+    <VBox alignment="CENTER" spacing="15">
+        <Label text="Cricket Help Desk"
+               style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        
+        <Label text="Enterprise Support Management Solution"
+               style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d; -fx-font-style: italic;"
+               textAlignment="CENTER"/>
+    </VBox>
+
+    <!-- Proceed Button -->
+    <Button fx:id="proceedButton" text="GET STARTED"
+            onAction="#onProceedClick"
+            prefWidth="220" prefHeight="50"
+            style="-fx-font-size: 16px; 
+                   -fx-background-color: #2c3e50; 
+                   -fx-text-fill: white; 
+                   -fx-font-weight: bold;
+                   -fx-border-color: #2c3e50;
+                   -fx-border-width: 2px;
+                   -fx-border-radius: 25px;
+                   -fx-background-radius: 25px;
+                   -fx-cursor: hand;"/>
+
+</VBox> 

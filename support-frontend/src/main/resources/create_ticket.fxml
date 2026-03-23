@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.pecenio.frontend.controller.CreateTicketController"
+            prefHeight="700.0" prefWidth="1000.0"
+            style="-fx-background-color: linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%); 
+                   -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+    <VBox alignment="CENTER" spacing="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+        <VBox alignment="CENTER" spacing="0" style="-fx-padding: 40 0 40 0;">
+            <VBox alignment="CENTER" spacing="18" maxWidth="700" style="-fx-background-color: white; -fx-background-radius: 22px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.13), 18, 0, 0, 6);">
+                <padding>
+                    <Insets top="36" right="44" bottom="36" left="44"/>
+                </padding>
+                <Label text="Create New Ticket"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label text="Fill in the details below to create a new support ticket"
+                       style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-text-alignment: center;"/>
+                <GridPane hgap="30" vgap="18" maxWidth="610" style="-fx-background-color: transparent;">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <!-- Row 0: ID -->
+                    <!-- Row 1: Ticket Type -->
+                    <Label text="Ticket Type" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <ComboBox fx:id="typeCombo" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="220" promptText="Select ticket type"/>
+                    <!-- Row 2: Client Name -->
+                    <Label text="Client Name" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="clientNameField" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="Enter client name..."/>
+                    <!-- Row 3: Account Number -->
+                    <Label text="Account Number" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="accountNumberField" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="Enter account number..."/>
+                    <!-- Row 4: Concern (Title) -->
+                    <Label text="Concern Title" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="concernTitleField" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="Enter concern title..."/>
+                    <!-- Row 5: Concern Details -->
+                    <Label text="Concern Details" GridPane.rowIndex="5" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <TextArea fx:id="detailsArea" GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="3" prefHeight="100" promptText="Enter concern details..." wrapText="true"/>
+                    <!-- Row 6: Date -->
+                    <Label text="Date" GridPane.rowIndex="6" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <DatePicker fx:id="datePicker" GridPane.rowIndex="6" GridPane.columnIndex="1" promptText="Select date..."/>
+                </GridPane>
+                <VBox.margin>
+                    <Insets bottom="30"/>
+                </VBox.margin>
+                <HBox alignment="CENTER_RIGHT" spacing="20" maxWidth="610">
+                    <Button text="Cancel" onAction="#onBackToMain"
+                            style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px; -fx-background-radius: 8px; -fx-padding: 8 18; -fx-cursor: hand;"/>
+                    <Button text="Create Ticket" onAction="#handleSubmit"
+                            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px; -fx-background-radius: 8px; -fx-padding: 8 18; -fx-cursor: hand;"/>
+                </HBox>
+                <Label fx:id="notificationLabel" visible="false" style="-fx-font-size: 14px; -fx-padding: 8; -fx-background-radius: 8;" />
+            </VBox>
+        </VBox>
+    </VBox>
+</AnchorPane>

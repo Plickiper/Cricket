@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.pecenio.frontend.controller.MainController"
+      prefHeight="700.0" prefWidth="1000.0"
+      style="-fx-background-color: linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%); 
+             -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <!-- Header Section -->
+    <VBox style="-fx-background-color: linear-gradient(to right, #f7fafc 60%, #e3e9f3 100%); -fx-background-radius: 15px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2); -fx-border-color: #e0e4ea; -fx-border-width: 0 0 2 0; -fx-border-radius: 15px;" spacing="18">
+        <padding>
+            <Insets top="40" right="40" bottom="40" left="40"/>
+        </padding>
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <Label text="🎫" style="-fx-font-size: 28px; -fx-padding: 0 8 0 0;"/>
+            <VBox spacing="4">
+            <Label text="Cricket Help Desk"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label text="Manage and track support tickets efficiently"
+                       style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+        <VBox.margin>
+        <Insets bottom="18"/>
+        </VBox.margin>
+
+    <!-- Notification Bar -->
+    <HBox alignment="CENTER">
+        <Label fx:id="notificationLabel" visible="false" style="-fx-font-size: 14px; -fx-padding: 8; -fx-background-radius: 8; -fx-alignment: CENTER;" />
+    </HBox>
+
+    <!-- Table Section -->
+    <VBox style="-fx-background-color: white; -fx-background-radius: 15px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" VBox.vgrow="ALWAYS" spacing="20">
+        <padding>
+            <Insets top="30" right="35" bottom="35" left="35"/>
+        </padding>
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Label text="Active Tickets" style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox spacing="12" alignment="CENTER_RIGHT">
+        <Button text="Create Ticket" onAction="#onCreateTicket"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px; -fx-background-radius: 8px; -fx-padding: 8 18; -fx-cursor: hand;"/>
+        <Button fx:id="editButton" text="Edit Ticket" onAction="#onEditTicket"
+                        style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px; -fx-background-radius: 8px; -fx-padding: 8 18; -fx-cursor: hand;"/>
+        <Button fx:id="viewButton" text="View Ticket" onAction="#onViewTicket"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px; -fx-background-radius: 8px; -fx-padding: 8 18; -fx-cursor: hand;"/>
+        <Button fx:id="deleteButton" text="Delete Ticket" onAction="#onDeleteTicket"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px; -fx-background-radius: 8px; -fx-padding: 8 18; -fx-cursor: hand;"/>
+        <Button text="History" onAction="#onHistory"
+                        style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 13px; -fx-background-radius: 8px; -fx-padding: 8 18; -fx-cursor: hand;"/>
+            </HBox>
+    </HBox>
+        <TableView fx:id="ticketTable" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+            <style>
+                -fx-table-cell-border-color: transparent;
+                -fx-table-header-border-color: #ecf0f1;
+                -fx-table-header-background-color: #f8f9fa;
+            </style>
+        <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="60" style="-fx-font-weight: bold;"/>
+                <TableColumn fx:id="typeColumn" text="Type" prefWidth="120" style="-fx-font-weight: bold;"/>
+                <TableColumn fx:id="detailsColumn" text="Details" prefWidth="350" style="-fx-font-weight: bold;"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="120" style="-fx-font-weight: bold;"/>
+                <TableColumn fx:id="dateReportedColumn" text="Date Reported" prefWidth="150" style="-fx-font-weight: bold;"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+    </VBox>
+
+</VBox>
