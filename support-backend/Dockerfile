@@ -1,6 +1,6 @@
 FROM openjdk:17-oracle
 
-LABEL maintainer="design.kurtjoseph@gmail.com"
+LABEL maintainer="anonymous"
 
 WORKDIR /opt/app
 
